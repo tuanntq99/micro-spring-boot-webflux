@@ -1,0 +1,78 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Run Config Server",
+        "type": "shell",
+        "command": "mvnw.cmd",
+        "args": [
+          "spring-boot:run"
+        ],
+        "options": {
+          "cwd": "config-server"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Run Service Registry",
+        "type": "shell",
+        "command": "mvnw.cmd",
+        "args": [
+          "spring-boot:run"
+        ],
+        "options": {
+          "cwd": "service-registry"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Run Gateway",
+        "type": "shell",
+        "command": "mvnw.cmd",
+        "args": [
+          "spring-boot:run"
+        ],
+        "options": {
+          "cwd": "gateway"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Run Department Service",
+        "type": "shell",
+        "command": "mvnw.cmd",
+        "args": [
+          "spring-boot:run"
+        ],
+        "options": {
+          "cwd": "department-service"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Run Employee Service",
+        "type": "shell",
+        "command": "mvnw.cmd",
+        "args": [
+          "spring-boot:run"
+        ],
+        "options": {
+          "cwd": "employee-service"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Run All Microservices",
+        "dependsOrder": "sequence",
+        "dependsOn": [
+          "Run Config Server",
+          "Run Service Registry",
+          "Run Department Service",
+          "Run Employee Service",
+          "Run Gateway"
+        ],
+        "problemMatcher": []
+      }
+    ]
+  }
+  

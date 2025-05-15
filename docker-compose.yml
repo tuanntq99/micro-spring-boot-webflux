@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  config-server:
+    build: ./config-server
+    ports:
+      - "8088:8088"
+    networks:
+      - microservice-net
+    volumes:
+      - ./config-repo:/config-repo
+    environment:
+      - SPRING_PROFILES_ACTIVE=native
+
+  service-registry:
+    build: ./service-registry
+    ports:
+      - "8761:8761"
+    networks:
+      - microservice-net
+
+  department-service:
+    build: ./department-service
+    ports:
+      - "8081:8081"
+    networks:
+      - microservice-net
+    depends_on:
+      - service-registry
+      - config-server
+    environment:
+      - "spring.config.import=optional:configserver:http://localhost:8088"
+
+
+networks:
+  microservice-net:

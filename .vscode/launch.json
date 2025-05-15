@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [  
+      {
+        "type": "java",
+        "name": "Run Config Server",
+        "request": "launch",
+        "mainClass": "app.demo.config_server.ConfigServerApplication",
+        "projectName": "config-server"
+      },
+      {
+        "type": "java",
+        "name": "Run Service Registry",
+        "request": "launch",
+        "mainClass": "app.demo.service_registry.ServiceRegistryApplication",
+        "projectName": "service-registry"
+      },
+      {
+        "type": "java",
+        "name": "Run Gateway",
+        "request": "launch",
+        "mainClass": "app.demo.gateway.GatewayApplication",
+        "projectName": "gateway"
+      },
+      {
+        "type": "java",
+        "name": "Run Department Service",
+        "request": "launch",
+        "mainClass": "app.demo.department_service.DepartmentServiceApplication",
+        "projectName": "department-service"
+      },
+      {
+        "type": "java",
+        "name": "Run Employee Service",
+        "request": "launch",
+        "mainClass": "app.demo.employee_service.EmployeeServiceApplication",
+        "projectName": "employee-service"
+      }
+    ]
+  }
+  
